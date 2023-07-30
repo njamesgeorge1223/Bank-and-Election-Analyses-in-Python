@@ -1,1 +1,1 @@
-This directory holds the files for the PyBank challenge.
+This folder holds the files for the PyBank challenge.
