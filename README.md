@@ -3,7 +3,7 @@
 ## PyBank
 
 For this Challenge, I created a Python script to analyze the financial records 
-of a company summarized in a csv file, budget_data.csv.  The script calculated
+of a company located in a csv file, budget_data.csv.  The script calculated
 each of the following values:
 
   * The total number of months included in the dataset
