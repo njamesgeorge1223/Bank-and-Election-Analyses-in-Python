@@ -29,3 +29,5 @@ following values:
   * The total number of votes each candidate won
 
   * The winner of the election based on popular vote
+
+Both programs are versatile and capable of processing other datasets with the same formats: for instance, PyPoll can also handle write-in candidates.
