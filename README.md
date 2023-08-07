@@ -17,7 +17,7 @@ For this Challenge, I created a Python script to analyze a company's financial r
 
 ## PyPoll
 
-For this Challenge, I was tasked with helping a small, rural town modernize its vote-counting process.  Th poll data was in an input csv file.  The Python script analyzes the votes in the dataset and calculates each of the following values:
+For this Challenge, I was tasked with helping a small, rural town modernize its vote-counting process; the associated poll data was in an input csv file, election_data.csv.  The Python script analyzes the votes in the dataset and calculates each of the following values:
 
   * The total number of votes cast
 
