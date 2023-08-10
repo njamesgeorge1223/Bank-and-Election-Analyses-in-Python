@@ -1,4 +1,4 @@
-# Python Challenge
+# Python Challenges
 
 ## PyBank
 
