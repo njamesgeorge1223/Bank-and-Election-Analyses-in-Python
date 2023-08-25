@@ -3,7 +3,7 @@
  #  File Name:  main.py
  #
  #  File Description:
- #      This program takes a set of poll data from a csv file in the Resources folder, 
+ #      This program takes a poll dataset from a csv file in the Resources folder, 
  #      election_data.csv, composed of three columns: "Voter ID", "County", and "Candidate". 
  #      This Python script analyzes the votes and calculates each of the following values: 
  #      the total number of votes cast, a complete list of candidates who received votes, the 
@@ -15,7 +15,7 @@
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
- #  07/30/2023      Initial Development                     Nicholas George
+ #  07/30/2023      Initial Development                     N. James George
  #
  #******************************************************************************************/
 
@@ -23,7 +23,7 @@ import csv
 from enum import Enum
 
 
-# This enumeration contains constant indices for the input csv file's columns.
+# This enumeration contains indices for the input csv file's columns.
 class DataColumnIndicesEnumeration(Enum):
 
     BALLOT_ID_INDEX = 0
@@ -52,19 +52,24 @@ class DictionaryIndicesEnumeration(Enum):
     VOTE_COUNT = 2
 
 
-# These constants contain the names of the input and output file paths.
-CONSTANT_INPUT_FILE_NAME = './Resources/election_data.csv'
+# These constants are the names of the input and output file paths.
+CONSTANT_INPUT_FILE_NAME \
+    = './Resources/election_data.csv'
 
-CONSTANT_OUTPUT_FILE_NAME = './analysis/election_data_analysis.txt'
+CONSTANT_OUTPUT_FILE_NAME \
+    = './analysis/election_data_analysis.txt'
 
 
 # These constants are the title and tile line for the output data.
-CONSTANT_OUTPUT_DATA_TITLE = 'Election Results'
+CONSTANT_OUTPUT_DATA_TITLE \
+    = 'Election Results'
 
-CONSTANT_OUTPUT_DATA_TITLE_LINE = '----------------------------'
+CONSTANT_OUTPUT_DATA_TITLE_LINE \
+    = '----------------------------'
 
 # This constant is the program's message if there is a tie for the winner.
-CONSTANT_CANDIDATE_TIE_MESSAGE = 'There is no winner: the election is a tie!'
+CONSTANT_CANDIDATE_TIE_MESSAGE \
+    = 'There is no winner: the election is a tie!'
 
 
 #*******************************************************************************************
@@ -85,7 +90,7 @@ CONSTANT_CANDIDATE_TIE_MESSAGE = 'There is no winner: the election is a tie!'
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
@@ -93,15 +98,50 @@ def calculateCandidatePercentagesSubRoutine():
 
     tempPercentFloatVariable = 0.0
 
-    for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]]):
+    for candidateIndex, candidateName in enumerate \
+                                            (summaryDictionary \
+                                                [list \
+                                                    (summaryDictionary.keys()) \
+                                                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                            [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                                [DictionaryIndicesEnumeration.NAME.value]]):
         
         tempPercentFloatVariable \
-            = round((summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex] \
-                     / summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]])*100, \
-                    3)
+            = round \
+                ((summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                    [list \
+                        (list \
+                            (summaryDictionary.items()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                    [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                                        [candidateIndex] \
+                     / summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                    [DictionaryIndicesEnumeration.TOTAL_VOTES.value]]) \
+                  * 100, \
+                 3)
         
-        summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.PERCENT.value]]. \
-            append(tempPercentFloatVariable)
+        summaryDictionary \
+            [list \
+                (summaryDictionary.keys()) \
+                    [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+            [list \
+                (list \
+                    (summaryDictionary.items()) \
+                        [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                        [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                            [DictionaryIndicesEnumeration.PERCENT.value]] \
+            .append \
+                (tempPercentFloatVariable)
         
 
 #*******************************************************************************************
@@ -121,7 +161,7 @@ def calculateCandidatePercentagesSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
@@ -129,30 +169,64 @@ def determineWinnerSubRoutine():
 
     # This variable tells the program whether a tie has occurred between two or more winning 
     # candidates.
-    candidateTieFlagBooleanVariable = False
+    candidateTieFlagBooleanVariable \
+        = False
 
     # This variable holds the winning candidate's nested index in the summary dictionary.
-    winnerIndexIntegerVariable = 0
+    winnerIndexIntegerVariable \
+        = 0
 
     # This variable holds the winning candidate's vote count.
-    winnerVoteCountIntegerVariable = 0 
+    winnerVoteCountIntegerVariable \
+        = 0 
 
 
-    # This for repetiton loop starts with the first candidate then looks for another candidate 
+    # This repetiton loop starts with the first candidate then looks for another candidate 
     # with a greater vote count. 
-    for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]]):
+    for candidateIndex, candidateName in enumerate \
+                                            (summaryDictionary \
+                                                [list \
+                                                    (summaryDictionary.keys()) \
+                                                        [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                            [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                                [DictionaryIndicesEnumeration.NAME.value]]):
         
         # The program compares vote counts to determine the greatest one and stores the winning 
         # candidate's index and vote count in the appropriate variables.
         if candidateIndex > 0:
 
-
-            if winnerVoteCountIntegerVariable < \
-                summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]:
+            if winnerVoteCountIntegerVariable \
+                < summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                [list \
+                                    (list \
+                                        (summaryDictionary.items()) \
+                                            [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                                [candidateIndex]:
             
-                winnerVoteCountIntegerVariable = summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]
+                winnerVoteCountIntegerVariable \
+                    = summaryDictionary \
+                        [list \
+                            (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                    [list \
+                                        (list \
+                                            (summaryDictionary.items()) \
+                                                [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                                [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                    [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                                    [candidateIndex]
             
-                winnerIndexIntegerVariable = candidateIndex
+                winnerIndexIntegerVariable \
+                    = candidateIndex
        
 
         # The program initializes the vote count variable with the first candidate's vote count; 
@@ -160,22 +234,56 @@ def determineWinnerSubRoutine():
         else:
 
             winnerVoteCountIntegerVariable \
-                = summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]
+                = summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                        [list \
+                            (list \
+                                (summaryDictionary.items()) \
+                                    [DictionaryIndicesEnumeration.CANDIDATES.value] 
+                                    [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                        [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                        [candidateIndex]
 
 
-    # The program now takes the winning candidates vote count and compares it to the other candidate's 
+    # The program now takes the winning candidate's vote count and compares it to the other candidate's 
     # vote counts.  If there is a match, the program changes the Boolean flag value to true and writes 
-    # a message to the appropriate summary dictionary variable before exiting the for loop.
-    for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]]):
+    # a message to the appropriate summary dictionary variable before exiting the iteration loop.
+    for candidateIndex, candidateName in enumerate \
+                                            (summaryDictionary \
+                                                [list \
+                                                    (summaryDictionary.keys()) \
+                                                        [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                            [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                                [DictionaryIndicesEnumeration.NAME.value]]):
   
-        if winnerVoteCountIntegerVariable == \
-            summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex] \
-                and candidateIndex != winnerIndexIntegerVariable:
+        if winnerVoteCountIntegerVariable \
+            == summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                [list \
+                                    (list \
+                                        (summaryDictionary.items()) \
+                                            [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                                [candidateIndex] \
+            and candidateIndex \
+                    != winnerIndexIntegerVariable:
 
             candidateTieFlagBooleanVariable \
                 = True
 
-            summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]] \
+            summaryDictionary \
+                [list \
+                    (summaryDictionary.keys()) \
+                        [DictionaryIndicesEnumeration.WINNER.value]] \
                 = CONSTANT_CANDIDATE_TIE_MESSAGE
             
             break
@@ -185,8 +293,21 @@ def determineWinnerSubRoutine():
     # dictionary variable.
     if candidateTieFlagBooleanVariable == False:
         
-        summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]] \
-            = summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]][winnerIndexIntegerVariable]
+        summaryDictionary \
+            [list \
+                (summaryDictionary.keys()) \
+                    [DictionaryIndicesEnumeration.WINNER.value]] \
+            = summaryDictionary \
+                [list \
+                    (summaryDictionary.keys()) \
+                        [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                            [list \
+                                (list \
+                                    (summaryDictionary.items()) \
+                                        [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                            [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                [DictionaryIndicesEnumeration.NAME.value]] \
+                            [winnerIndexIntegerVariable]
 
 
 #*******************************************************************************************
@@ -206,13 +327,13 @@ def determineWinnerSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
 def readFileAndCalculateValuesSubRoutine():
 
-    # This variable contains the candidate's name from the current row of data.
+    # This variable is the candidate's name from the current row of data.
     currentCandidateNameStringVariable \
         = ''
 
@@ -232,7 +353,7 @@ def readFileAndCalculateValuesSubRoutine():
             = csv.reader(csvFile)
 
 
-        # This for repetition loop moves down the rows of data and calculates the values 
+        # This repetition loop moves down the rows of data and calculates the values 
         # for the summary.
         for rowDataIndex, csvRow in enumerate(csvReaderObject):
    
@@ -247,26 +368,48 @@ def readFileAndCalculateValuesSubRoutine():
                 # This line of code assigns the current candidate's name to the appropriate 
                 # variable.
                 currentCandidateNameStringVariable \
-                    = csvRow[DataColumnIndicesEnumeration.CANDIDATE_INDEX.value]
+                    = csvRow \
+                            [DataColumnIndicesEnumeration.CANDIDATE_INDEX.value]
                 
-                # This line of code sets initializes the Boolean flag to false for processing.
+                # This line of code initializes the Boolean flag to False for processing.
                 candidateFoundFlagBooleanVariable \
                     = False
 
 
-                # This for repetition loop looks at all the existing candidates in the summary 
+                # This repetition loop looks at all the existing candidates in the summary 
                 # dictionary.
-                for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]]):
+                for candidateIndex, candidateName in enumerate \
+                                                        (summaryDictionary \
+                                                            [list \
+                                                                (summaryDictionary.keys()) \
+                                                                        [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                                                            [list \
+                                                                (list \
+                                                                    (summaryDictionary.items()) \
+                                                                        [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                                                        [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                                                [DictionaryIndicesEnumeration.NAME.value]]):
                 
                     # If the program finds the current candidate in the summary dictionary, it 
-                    # increments the candidate's vote count, sets the Boolean flag to true, 
-                    # and exits the for loop.
+                    # increments the candidate's vote count, sets the Boolean flag to True, 
+                    # and exits the repetition loop.
                     if candidateName == currentCandidateNameStringVariable:
                         
-                        summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex] \
+                        summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                    [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                            [list \
+                                (list \
+                                    (summaryDictionary.items()) \
+                                        [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                        [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                            [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                                [candidateIndex] \
                             += 1
                         
-                        candidateFoundFlagBooleanVariable = True
+                        candidateFoundFlagBooleanVariable \
+                            = True
                         
                         break
                 
@@ -275,25 +418,75 @@ def readFileAndCalculateValuesSubRoutine():
                 # it adds the candidate and sets the vote count to one.
                 if candidateFoundFlagBooleanVariable == False:
 
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]].append(currentCandidateNameStringVariable)
+                    summaryDictionary \
+                        [list \
+                            (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                        [list \
+                            (list \
+                                (summaryDictionary.items()) \
+                                    [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                    [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                        [DictionaryIndicesEnumeration.NAME.value]] \
+                        .append \
+                            (currentCandidateNameStringVariable)
                     
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]].append(1)
+                    summaryDictionary \
+                        [list \
+                            (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                        [list \
+                            (list \
+                                (summaryDictionary.items()) \
+                                    [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                    [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                        [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                        .append \
+                            (1)
 
 
-            # If the row index is equal to one, it adds the first candidate to the summary 
+            # If the row index is equal to one, the Python script adds the first candidate to the summary 
             # dictionary and sets his/her vote count to one.
             elif rowDataIndex == 1:
 
-                currentCandidateNameStringVariable = csvRow[DataColumnIndicesEnumeration.CANDIDATE_INDEX.value]
+                currentCandidateNameStringVariable \
+                    = csvRow \
+                        [DataColumnIndicesEnumeration.CANDIDATE_INDEX.value]
 
-                summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]].append(currentCandidateNameStringVariable)
+                summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                    [list \
+                        (list \
+                            (summaryDictionary.items()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                    [DictionaryIndicesEnumeration.NAME.value]] \
+                    .append \
+                        (currentCandidateNameStringVariable)
                
-                summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]].append(1)
+                summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.CANDIDATES.value]] \
+                    [list \
+                        (list \
+                            (summaryDictionary.items()) \
+                                [DictionaryIndicesEnumeration.CANDIDATES.value] \
+                                [DictionaryIndicesEnumeration.NESTED_DATA.value].keys()) \
+                                    [DictionaryIndicesEnumeration.VOTE_COUNT.value]] \
+                    .append \
+                        (1)
     
 
-    # This line of code takes the counter from the for loop and assigns its value to the summary 
+    # This line of code takes the counter from the repetition loop and assigns its value to the summary 
     # dictionary's total votes variable.
-    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]] = rowDataIndex
+    summaryDictionary \
+        [list \
+            (summaryDictionary.keys()) \
+                [DictionaryIndicesEnumeration.TOTAL_VOTES.value]] \
+        = rowDataIndex
 
 
     calculateCandidatePercentagesSubRoutine()
@@ -317,7 +510,7 @@ def readFileAndCalculateValuesSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                        N. James George
  #
  #******************************************************************************************/
 
@@ -378,7 +571,7 @@ def writeDataToTerminalSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
@@ -441,19 +634,17 @@ def writeDataToFileSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
-summaryDictionary = {
+summaryDictionary \
+    = {'Total Votes': 0,
 
-    'Total Votes' : 0,
+       'Candidates': 
+            {'Name': [], 'Percent': [], 'Vote Count': []},
 
-    'Candidates' : {'Name' : [], 'Percent' : [], 'Vote Count' : []},
-
-    'Winner' : ''
-
-}
+        'Winner' : ''}
 
 
 readFileAndCalculateValuesSubRoutine()
