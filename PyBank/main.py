@@ -3,21 +3,21 @@
  #  File Name:  main.py
  #
  #  File Description:
- #      This program, main.py, reads budget data from a csv file in the Resources folder, 
- #      budget_data.csv, composed of two columns: "Date" and "Profit/Losses".  The Python 
- #      script analyzes the records to calculate each of the following values: the total 
- #      number of months included in the dataset, the net total amount of "Profit/Losses" 
- #      over the entire period, the changes in "Profit/Losses" over the entire period and 
- #      the average of those changes, the greatest increase in profits (date and amount) 
- #      over the entire period, and the greatest decrease in profits (date and amount) over 
- #      the entire period.  In addition, the program both prints the analysis to the terminal 
- #      and exports a text file with the results, budget_data_analysis.txt, to the analysis 
- #      folder.
+ #      This program, main.py, reads budget data composed of two columns: "Date" and 
+ #      "Profit/Losses" from a csv file in the Resources folder, budget_data.csv.  The 
+ #      Python script analyzes the records to calculate each of the following values: 
+ #      the total number of months included in the dataset, the net total amount of 
+ #      "Profit/Losses" over the entire period, the changes in "Profit/Losses" over the 
+ #      entire period, and the average of these changes, the greatest increase in profits 
+ #      (date and amount) over the entire period, and the greatest decrease in profits 
+ #      (date and amount) over the entire period.  In addition, the program both prints 
+ #      the analysis to the terminal and exports a text file with the results, 
+ #      budget_data_analysis.txt, to the analysis folder.
  #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
- #  07/30/2023      Initial Development                     Nicholas George
+ #  07/30/2023      Initial Development                     N. James George
  #
  #******************************************************************************************/
 
@@ -54,16 +54,20 @@ class DictionaryIndicesEnumeration(Enum):
     VALUE = 1
 
 
-# These constants contain the names of the input and output file paths.
-CONSTANT_INPUT_FILE_NAME = './Resources/budget_data.csv'
+# These constants are the names of the input and output file paths.
+CONSTANT_INPUT_FILE_NAME \
+    = './Resources/budget_data.csv'
 
-CONSTANT_OUTPUT_FILE_NAME = './analysis/budget_data_analysis.txt'
+CONSTANT_OUTPUT_FILE_NAME \
+    = './analysis/budget_data_analysis.txt'
 
 
 # This constant is the title and tile line for the output data.
-CONSTANT_OUTPUT_DATA_TITLE = 'Financial Analysis'
+CONSTANT_OUTPUT_DATA_TITLE \
+    = 'Financial Analysis'
 
-CONSTANT_OUTPUT_DATA_TITLE_LINE = '----------------------------'
+CONSTANT_OUTPUT_DATA_TITLE_LINE \
+    = '----------------------------'
 
 
 #*******************************************************************************************
@@ -71,7 +75,7 @@ CONSTANT_OUTPUT_DATA_TITLE_LINE = '----------------------------'
  #  Subroutine Name:  readFileAndCalculateValuesSubRoutine
  #
  #  Subroutine Description:
- #      This subroutine reads an input csv file and calculates the summary values needed 
+ #      This subroutine reads an input csv file and calculates the summary values
  #      for the program output.
  #
  #  Subroutine Parameters:
@@ -83,22 +87,25 @@ CONSTANT_OUTPUT_DATA_TITLE_LINE = '----------------------------'
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
 def readFileAndCalculateValuesSubRoutine():
 
-    # These variables contain the current and last profit/loss values as the program moves
-    # down the rows of input data.
-    lastProfitLossIntegerVariable = 0
+    # These variables contain the current and last profit/loss values 
+    # as the program moves down the rows of input data.
+    lastProfitLossIntegerVariable \
+            = 0
 
 
-    # These variables contain the change in profit/loss between the current and last
-    # values and the net change in profit/loss.
-    currentChangesProfitLossIntegerVariable = 0
+    # These variables contain the change in profit/loss pertaining to the current 
+    # and last values versus the net change in profit/loss.
+    currentChangesProfitLossIntegerVariable \
+        = 0
 
-    netChangesProfitLossIntegerVariable = 0
+    netChangesProfitLossIntegerVariable \
+        = 0
 
 
     #This line of code opens the csv file and returns a file object.
@@ -106,9 +113,12 @@ def readFileAndCalculateValuesSubRoutine():
 
         # This line of code reads the data from the file object and assigns 
         # it to a reader object.
-        csvReaderObject = csv.reader(csvFile)
+        csvReaderObject \
+                = csv \
+                    .reader \
+                        (csvFile)
 
-        # This for repetition loop moves down the rows of data and calculates the values 
+        # This repetition loop moves down the rows of data and calculates the values 
         # for the summary.
         for rowIndex, csvRow in enumerate(csvReaderObject):
 
@@ -124,12 +134,17 @@ def readFileAndCalculateValuesSubRoutine():
                 # This line of code takes the current profit/loss value from the row of data 
                 # and assigns it to a variable.
                 currentProfitLossIntegerVariable \
-                    = int(csvRow[DataColumnIndicesEnumeration.PROFIT_LOSS_COLUMN_INDEX.value])
+                    = int \
+                        (csvRow \
+                            [DataColumnIndicesEnumeration.PROFIT_LOSS_COLUMN_INDEX.value])
 
-                # This line of code adds the current profit/loss value to the summary dictionary
+                # This line of code adds the current profit/loss to the summary dictionary
                 # value for the net total profit/loss .
-                summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]] \
-                    += currentProfitLossIntegerVariable
+                summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.TOTAL.value]] \
+                += currentProfitLossIntegerVariable
 
 
                 # This line of code calculates the change in profit/loss and assigns it
@@ -144,7 +159,7 @@ def readFileAndCalculateValuesSubRoutine():
 
 
                 # This line of code assigns the current profit/loss value to the variable 
-                # for the last profit/loss value for the next row.
+                # for the last profit/loss value for processing the next row.
                 lastProfitLossIntegerVariable \
                     = currentProfitLossIntegerVariable
 
@@ -153,24 +168,86 @@ def readFileAndCalculateValuesSubRoutine():
                 # is the greatest increase.  If it is, the program assigns the date and
                 # value in the row of data to the appropriate summary dictionary variables.
                 if currentChangesProfitLossIntegerVariable \
-                    > summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]:
+                   > summaryDictionary \
+                        [list \
+                            (summaryDictionary.keys()) \
+                                    [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]] \
+                        [list \
+                            (list \
+                                (summaryDictionary.items()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value] \
+                                        [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                            .keys()) \
+                                [DictionaryIndicesEnumeration.VALUE.value]]:
 
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]] \
-                        = csvRow[DataColumnIndicesEnumeration.DATE_COLUMN_INDEX.value]
+                    summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                                [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value] \
+                                                                [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                                                        .keys()) \
+                                                    [DictionaryIndicesEnumeration.DATE.value]] \
+                        = csvRow \
+                            [DataColumnIndicesEnumeration.DATE_COLUMN_INDEX.value]
 
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]] \
+                    summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                                [DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value] \
+                                                                [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                                                    .keys()) \
+                                                    [DictionaryIndicesEnumeration.VALUE.value]] \
                         = currentChangesProfitLossIntegerVariable
 
 
                 # These lines of code check to see if the current decrease in profit/loss 
                 # is the greatest decrease.  If it is, the program assigns the date and
-                # value in the row of data to the appropriate summary dictionary variables.
+                # value to the appropriate summary dictionary variables.
                 if currentChangesProfitLossIntegerVariable \
-                    < summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]:
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]] \
+                    < summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]] \
+                                            [list \
+                                                (list \
+                                                    (summaryDictionary.items()) \
+                                                        [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value] \
+                                                        [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                                            .keys()) \
+                                                [DictionaryIndicesEnumeration.VALUE.value]]:
+                    
+                    summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]] \
+                                                [list \
+                                                    (list \
+                                                        (summaryDictionary.items()) \
+                                                                [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value] \
+                                                                [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                                                    .keys()) \
+                                                    [DictionaryIndicesEnumeration.DATE.value]] \
                         = csvRow[DataColumnIndicesEnumeration.DATE_COLUMN_INDEX.value]
                     
-                    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]] \
+                    summaryDictionary \
+                            [list \
+                                (summaryDictionary.keys()) \
+                                        [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]] \
+                                            [list \
+                                                (list \
+                                                    (summaryDictionary.items()) \
+                                                        [DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value] \
+                                                        [DictionaryIndicesEnumeration.NESTED_DATA.value] \
+                                                            .keys()) \
+                                                [DictionaryIndicesEnumeration.VALUE.value]] \
                         = currentChangesProfitLossIntegerVariable
 
 
@@ -182,29 +259,45 @@ def readFileAndCalculateValuesSubRoutine():
                 # to the variable for the last profit/loss value, so the program can 
                 # use it in the next iteration.
                 lastProfitLossIntegerVariable \
-                    = int(csvRow[DataColumnIndicesEnumeration.PROFIT_LOSS_COLUMN_INDEX.value])
+                    = int \
+                        (csvRow \
+                            [DataColumnIndicesEnumeration.PROFIT_LOSS_COLUMN_INDEX.value])
                 
 
                 # This line of code initializes the summary dictionary variable for net 
                 # total profit/loss with the current protfit/loss value in the data.
-                summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]] \
+                summaryDictionary \
+                        [list \
+                            (summaryDictionary.keys()) \
+                                [DictionaryIndicesEnumeration.TOTAL.value]] \
                     = lastProfitLossIntegerVariable
     
     
-    # This line of code assigns the row index in the for loop to the summary dictionary variable for the total 
+    # This line of code assigns the row index in the iteration loop to the summary dictionary variable for the total 
     # number of months.
-    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]] = rowIndex
+    summaryDictionary \
+            [list \
+                (summaryDictionary.keys()) \
+                        [DictionaryIndicesEnumeration.TOTAL_MONTHS.value]] \
+        = rowIndex
 
 
     # This line of code calculates the average change in profit/loss by taking the net changes in profit/loss 
-    # and dividing by the number of months minus one, because changes in profit/loss do not start until the 
+    # and dividing it by the number of months minus one, because changes in profit/loss do not start until the 
     # second month when there is both a current and last value available.
-    summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]] \
-        = round( \
-            float( \
-                netChangesProfitLossIntegerVariable) \
-                    / float(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]]-1), \
-                  2)
+    summaryDictionary \
+            [list \
+                (summaryDictionary.keys()) \
+                        [DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]] \
+        = round \
+            (float \
+                (netChangesProfitLossIntegerVariable) \
+             / float \
+                (summaryDictionary \
+                    [list \
+                        (summaryDictionary.keys()) \
+                            [DictionaryIndicesEnumeration.TOTAL_MONTHS.value]] - 1), \
+             2)
 
 
 #*******************************************************************************************
@@ -223,7 +316,7 @@ def readFileAndCalculateValuesSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
@@ -276,7 +369,7 @@ def writeDataToTerminalSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                          N. James George
  #
  #******************************************************************************************/
 
@@ -331,23 +424,24 @@ def writeDataToFileSubRoutine():
  #
  #  Date                Description                                 Programmer
  #  ---------------     ------------------------------------        ------------------
- #  7/30/2023           Initial Development                         Nicholas George
+ #  7/30/2023           Initial Development                         N. James George
  #
  #******************************************************************************************/
 
-summaryDictionary = {
+summaryDictionary \
+     = {'Total Months': 0,
 
-    'Total Months' : 0,
+        'Total': 0,
 
-    'Total' : 0,
+        'Average Change': 0.0,
 
-    'Average Change' : 0.0,
+        'Greatest Increase in Profits': 
+                {'Date': '', 
+                 'Value': 0 },
 
-    'Greatest Increase in Profits' : {'Date' : '', 'Value' : 0 },
-
-    'Greatest Decrease in Profits' : {'Date' : '', 'Value' : 0 },
-
-}
+        'Greatest Decrease in Profits': 
+                {'Date': '', 
+                 'Value': 0 }}
 
 
 readFileAndCalculateValuesSubRoutine()
