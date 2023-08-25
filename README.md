@@ -2,7 +2,7 @@
 
 ## PyBank
 
-For this Challenge, I created a Python script to analyze a company's financial records located in a csv file, budget_data.csv.  The script calculated each of the following values:
+For this Challenge, I created a Python script to analyze a company's financial records from a csv file, budget_data.csv.  The script calculated each of the following values:
 
   * The total number of months included in the dataset
 
