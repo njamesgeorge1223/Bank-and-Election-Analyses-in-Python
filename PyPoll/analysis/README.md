@@ -1,1 +1,1 @@
-This folder contains the text file with the results from the PyPoll analysis.
+This folder contains the PyPoll Challenge's output file.
