@@ -1,1 +1,1 @@
-This folder contains the input CSV file used for the PyBank challenge.
+This folder contains the PyBank Challenge'd input file.
