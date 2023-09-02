@@ -1,1 +1,1 @@
-This folder contains the CSV file used for the PyPoll challenge.
+This folder contains the PyPoll Challenge's input file.
