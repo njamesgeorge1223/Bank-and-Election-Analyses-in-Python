@@ -5,3 +5,9 @@ amount of "Profit/Losses" over the entire period, the changes in "Profit/Losses"
 of those changes, the greatest increase in profits (date and amount) over the entire period, and the greatest decrease 
 in profits (date and amount) over the entire period.  In addition, the program both prints the analysis to the terminal 
 and exports it to a text file, budget_data_analysis.txt, both in the analysis folder.
+
+----
+
+## Copyright
+
+N. James George © 2023. All Rights Reserved.
