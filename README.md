@@ -30,3 +30,9 @@ For this Challenge, I was tasked with helping a small, rural town modernize its 
   * The winner of the election based on popular vote
 
 Both programs are versatile and capable of processing other datasets with the same formats: for instance, PyPoll can also handle write-in candidates.
+
+----
+
+## Copyright
+
+N. James George © 2023. All Rights Reserved.
