@@ -4,15 +4,15 @@
 
 For this Challenge, I created a Python script to analyze a company's financial records from a csv file, budget_data.csv.  The script calculated each of the following values:
 
-  * The total number of months included in the dataset
+  * The total number of months included in the dataset: 86
 
-  * The net total amount of "Profit/Losses" over the entire period
+  * The net total amount of "Profit/Losses" over the entire period: $22,564,198
 
-  * The changes in "Profit/Losses" over the entire period, and then the average of those changes
+  * The changes in "Profit/Losses" over the entire period, and then the average of those changes: (-8,311.11 USD)
 
-  * The greatest increase in profits (date and amount) over the entire period
+  * The greatest increase in profits (date and amount) over the entire period: August 16, 2023 (1,862,002.00 USD)
 
-  * The greatest decrease in profits (date and amount) over the entire period
+  * The greatest decrease in profits (date and amount) over the entire period: February 14, 2023 (-1,825,558.00 USD)
 
 
 ## PyPoll
