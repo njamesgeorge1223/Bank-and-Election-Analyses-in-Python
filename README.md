@@ -2,7 +2,7 @@
 
 ## PyBank
 
-For this Challenge, I created a Python script to analyze a company's financial records from a csv file, budget_data.csv.  The script calculated each of the following values:
+For this Challenge, I create a Python script to analyze one company's profit/loss records for a single year (2023), which are in the CSV file, budget_data.csv, found in the Resources folder.  The script calculates each of the following values:
 
   * The total number of months included in the dataset: 86
 
@@ -17,7 +17,7 @@ For this Challenge, I created a Python script to analyze a company's financial r
 
 ## PyPoll
 
-For this Challenge, I was tasked with helping a small, rural town modernize its vote-counting process; the associated poll data was in an input csv file, election_data.csv.  The Python script analyzes the votes in the dataset and calculates each of the following values:
+For this Challenge, I was tasked with helping a small, rural town modernize its vote-counting process for a single election: the associated poll data is in a CSV file in the Resources folder, election_data.csv.  The script tallies the votes in the data set and calculates each of the following values:
 
   * The total number of votes cast: 369,711
 
