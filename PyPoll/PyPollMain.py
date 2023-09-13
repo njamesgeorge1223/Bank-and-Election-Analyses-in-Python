@@ -1,16 +1,17 @@
 #*******************************************************************************************
  #
- #  File Name:  main.py
+ #  File Name:  PyPollMain.py
  #
  #  File Description:
- #      This program takes a poll dataset from a csv file in the Resources folder, 
- #      election_data.csv, composed of three columns: "Voter ID", "County", and "Candidate". 
- #      This Python script analyzes the votes and calculates each of the following values: 
- #      the total number of votes cast, a complete list of candidates who received votes, the 
- #      percentage of votes each candidate won, the total number of votes each candidate won, 
- #      and the winner of the election based on popular vote.  In addition, the program both 
- #      prints the analysis to the terminal and exports a text file with the results, 
- #      election_data_analysis.txt, to the analysis folder.
+ #      This program takes a poll data set from a CSV file in the Resources folder, 
+ #      election_data.csv, composed of three columns: "Voter ID", "County", and 
+ #      "Candidate".  This Python script analyzes the votes and calculates each 
+ #      of the following values: the total number of votes cast, a complete list 
+ #      of candidates who received votes, the percentage of votes each candidate 
+ #      won, the total number of votes each candidate won, and the winner of the 
+ #      election based on the popular vote.  In addition, the program both prints 
+ #      the analysis to the terminal and exports the results to a text file, 
+ #      election_data_analysis.txt, in the Analysis folder.
  #
  #
  #  Date            Description                             Programmer
@@ -57,7 +58,7 @@ CONSTANT_INPUT_FILE_NAME \
     = './Resources/election_data.csv'
 
 CONSTANT_OUTPUT_FILE_NAME \
-    = './analysis/election_data_analysis.txt'
+    = './Analysis/election_data_analysis.txt'
 
 
 # These constants are the title and tile line for the output data.
