@@ -1,6 +1,10 @@
 # Python Challenges
 
+----
+
 ## PyBank
+
+----
 
 For this Challenge, I create a Python script, PyBankMain.py, to analyze one company's profit/loss records for a single year (2023), which are in the CSV file, budget_data.csv, found in the Resources folder.  The script calculates each of the following values:
 
@@ -14,8 +18,11 @@ For this Challenge, I create a Python script, PyBankMain.py, to analyze one comp
 
   * The greatest decrease in profits (date and amount) over the entire period: February 14, 2023 (-1,825,558.00 USD)
 
+----
 
 ## PyPoll
+
+----
 
 For this Challenge, I write a Python script, PyPollMain.py, to help a small, rural town modernize its vote-counting process for a single election: the associated poll data is in a CSV file in the Resources folder, election_data.csv.  The script tallies the votes in the data set and calculates each of the following values:
 
