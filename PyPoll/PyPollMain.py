@@ -527,7 +527,8 @@ def writeDataToTerminalSubRoutine():
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]]}')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]}:' \
+          + f' {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]]:,}')
 
     print()
 
@@ -538,7 +539,9 @@ def writeDataToTerminalSubRoutine():
 
     for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]]):
         
-        print(f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]][candidateIndex]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.PERCENT.value]][candidateIndex]}% ({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]})')
+        print(f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]][candidateIndex]}:' \
+              + f' {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.PERCENT.value]][candidateIndex]:,.2f}%' \
+              + f' ({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]:,})')
         
         print()
 
@@ -547,7 +550,8 @@ def writeDataToTerminalSubRoutine():
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]]}')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]]}')
 
     print()
 
@@ -590,7 +594,8 @@ def writeDataToFileSubRoutine():
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]]}')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_VOTES.value]]:,}')
 
         txtFile.write('\n\n')
 
@@ -601,7 +606,9 @@ def writeDataToFileSubRoutine():
 
         for candidateIndex, candidateName in enumerate(summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]]):
             
-            txtFile.write(f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]][candidateIndex]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.PERCENT.value]][candidateIndex]}% ({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]})')
+            txtFile.write(f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.NAME.value]][candidateIndex]}: ' \
+                          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.PERCENT.value]][candidateIndex]:,.2f}% ' \
+                          + f'({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.CANDIDATES.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.CANDIDATES.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VOTE_COUNT.value]][candidateIndex]:,})')
             
             txtFile.write('\n\n')
 
