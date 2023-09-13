@@ -5,10 +5,10 @@ Financial Analysis
 
 Total Records: 86
 
-Total: $22564198
+Total: 22,564,198.00 USD
 
-Average Change: $-8311.11
+Average Change: -8311.11 USD
 
-Greatest Increase in Profits: Aug-16 ($1862002)
+Greatest Increase in Profits: Aug-16 (1,862,002.00 USD)
 
-Greatest Decrease in Profits: Feb-14 ($-1825558)
+Greatest Decrease in Profits: Feb-14 (-1,825,558.00 USD)
