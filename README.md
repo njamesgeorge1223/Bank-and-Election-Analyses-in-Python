@@ -19,17 +19,35 @@ For this Challenge, I created a Python script to analyze a company's financial r
 
 For this Challenge, I was tasked with helping a small, rural town modernize its vote-counting process; the associated poll data was in an input csv file, election_data.csv.  The Python script analyzes the votes in the dataset and calculates each of the following values:
 
-  * The total number of votes cast
+  * The total number of votes cast: 369,711
 
-  * A complete list of candidates who received votes
+  * A complete list of candidates who received votes:
 
-  * The percentage of votes each candidate won
+    Charles Casper Stockham
 
-  * The total number of votes each candidate won
+    Diana DeGette
 
-  * The winner of the election based on popular vote
+    Raymon Anthony Doane
 
-Both programs are versatile and capable of processing other datasets with the same formats: for instance, PyPoll can also handle write-in candidates.
+  * The percentage of votes each candidate won:
+
+    Charles Casper Stockham: 23.05%
+
+    Diana DeGette: 73.81%
+
+    Raymon Anthony Doane: 3.14%
+
+  * The total number of votes each candidate won:
+
+    Charles Casper Stockham: 85,213
+
+    Diana DeGette: 272,892
+
+    Raymon Anthony Doane: 11,606
+
+  * The winner of the election based on popular vote: Diana DeGette
+
+Both programs are versatile and capable of processing other data sets with the same formats: for instance, PyPoll can also handle write-in candidates and announce ties.
 
 ----
 
