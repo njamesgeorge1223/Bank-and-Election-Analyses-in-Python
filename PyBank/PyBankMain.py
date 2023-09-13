@@ -3,16 +3,15 @@
  #  File Name:  main.py
  #
  #  File Description:
- #      This program, main.py, reads budget data composed of two columns: "Date" and 
- #      "Profit/Losses" from a csv file in the Resources folder, budget_data.csv.  The 
- #      Python script analyzes the records to calculate each of the following values: 
- #      the total number of months included in the dataset, the net total amount of 
- #      "Profit/Losses" over the entire period, the changes in "Profit/Losses" over the 
- #      entire period, and the average of these changes, the greatest increase in profits 
- #      (date and amount) over the entire period, and the greatest decrease in profits 
- #      (date and amount) over the entire period.  In addition, the program both prints 
- #      the analysis to the terminal and exports a text file with the results, 
- #      budget_data_analysis.txt, to the analysis folder.
+ #      This program, PyBankMain.py, reads budget data composed of two columns: 
+ #      'Date' and 'Profit/Losses' from a csv file in the Resources folder, 
+ #      budgetData.csv.  The Python script takes the profit/loss records and 
+ #      calculates each of the following values for the year (2023): the total 
+ #      number of records in the data set, the net total amount of 'Profit/Losses', 
+ #      the changes in 'Profit/Losses', the greatest increase in profits (date and 
+ #      amount), and the greatest decrease in profits (date and amount).  In 
+ #      addition, the program both prints the results to the terminal and exports it 
+ #      to a text file in the Analysis folder, budget_data_analysis.txt.
  #
  #
  #  Date            Description                             Programmer
@@ -56,10 +55,10 @@ class DictionaryIndicesEnumeration(Enum):
 
 # These constants are the names of the input and output file paths.
 CONSTANT_INPUT_FILE_NAME \
-    = './Resources/budget_data.csv'
+    = './Resources/budgetData.csv'
 
 CONSTANT_OUTPUT_FILE_NAME \
-    = './analysis/budget_data_analysis.txt'
+    = './Analysis/budgetDataAnalysis.txt'
 
 
 # This constant is the title and tile line for the output data.
