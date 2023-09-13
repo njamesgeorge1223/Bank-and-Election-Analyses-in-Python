@@ -55,10 +55,10 @@ class DictionaryIndicesEnumeration(Enum):
 
 # These constants are the names of the input and output file paths.
 CONSTANT_INPUT_FILE_NAME \
-    = './Resources/election_data.csv'
+    = './Resources/electionData.csv'
 
 CONSTANT_OUTPUT_FILE_NAME \
-    = './Analysis/election_data_analysis.txt'
+    = './Analysis/electionDataAnalysis.txt'
 
 
 # These constants are the title and tile line for the output data.
