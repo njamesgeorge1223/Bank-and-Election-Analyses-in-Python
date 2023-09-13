@@ -617,7 +617,8 @@ def writeDataToFileSubRoutine():
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]]}')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.WINNER.value]]}')
 
         txtFile.write('\n\n')
 
