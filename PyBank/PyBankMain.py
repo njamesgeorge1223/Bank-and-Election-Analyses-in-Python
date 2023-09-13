@@ -428,7 +428,7 @@ def writeDataToFileSubRoutine():
  #******************************************************************************************/
 
 summaryDictionary \
-     = {'Total Months': 0,
+     = {'Total Records': 0,
 
         'Total': 0,
 
