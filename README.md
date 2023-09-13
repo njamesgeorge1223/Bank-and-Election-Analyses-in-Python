@@ -17,7 +17,7 @@ For this Challenge, I create a Python script to analyze one company's profit/los
 
 ## PyPoll
 
-For this Challenge, I create a Python script to help a small, rural town modernize its vote-counting process for a single election: the associated poll data is in a CSV file in the Resources folder, election_data.csv.  The script tallies the votes in the data set and calculates each of the following values:
+For this Challenge, I write a Python script to help a small, rural town modernize its vote-counting process for a single election: the associated poll data is in a CSV file in the Resources folder, election_data.csv.  The script tallies the votes in the data set and calculates each of the following values:
 
   * The total number of votes cast: 369,711
 
