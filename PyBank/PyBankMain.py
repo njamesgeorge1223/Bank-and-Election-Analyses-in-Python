@@ -35,7 +35,7 @@ class DataColumnIndicesEnumeration(Enum):
 # This enumeration contains indices for the nested summary dictionary's keys.
 class DictionaryIndicesEnumeration(Enum):
 
-    TOTAL_MONTHS = 0
+    TOTAL_RECORDS = 0
 
     TOTAL = 1
 
@@ -277,7 +277,7 @@ def readFileAndCalculateValuesSubRoutine():
     summaryDictionary \
             [list \
                 (summaryDictionary.keys()) \
-                        [DictionaryIndicesEnumeration.TOTAL_MONTHS.value]] \
+                        [DictionaryIndicesEnumeration.TOTAL_RECORDS.value]] \
         = rowIndex
 
 
@@ -295,7 +295,7 @@ def readFileAndCalculateValuesSubRoutine():
                 (summaryDictionary \
                     [list \
                         (summaryDictionary.keys()) \
-                            [DictionaryIndicesEnumeration.TOTAL_MONTHS.value]] - 1), \
+                            [DictionaryIndicesEnumeration.TOTAL_RECORDS.value]] - 1), \
              2)
 
 
@@ -331,23 +331,30 @@ def writeDataToTerminalSubRoutine():
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]]}')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_RECORDS.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_RECORDS.value]]:,}')
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]}: ${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]]}')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]]:,.2f} USD')
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]}: ${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]]}')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]]:,.2f} USD')
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} (${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]})')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} ' \
+          + f'({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]: ,.2f} USD)')
 
     print()
 
-    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} (${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]})')
+    print(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]}: ' \
+          + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} ' \
+          + f'({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]:,.2f} USD)')
 
     print()
 
@@ -386,23 +393,30 @@ def writeDataToFileSubRoutine():
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_MONTHS.value]]}')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_RECORDS.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL_RECORDS.value]]}')
 
         txtFile.write('\n\n')
         
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]}: ${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]]}')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.TOTAL.value]]:,.2f} USD')
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]}: ${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]]}')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.AVERAGE_CHANGE.value]]:.2f} USD')
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} (${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]})')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} ' \
+                      + f'({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_INCREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]:,.2f} USD)')
 
         txtFile.write('\n\n')
 
-        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]}: {summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} (${summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]})')
+        txtFile.write(f'{list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]}: ' \
+                      + f'{summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.DATE.value]]} ' \
+                      + f'({summaryDictionary[list(summaryDictionary.keys())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value]][list(list(summaryDictionary.items())[DictionaryIndicesEnumeration.GREATEST_DECREASE_IN_PROFIT_LOSS.value][DictionaryIndicesEnumeration.NESTED_DATA.value].keys())[DictionaryIndicesEnumeration.VALUE.value]]:,.2f} USD)')
 
         txtFile.write('\n')
 
