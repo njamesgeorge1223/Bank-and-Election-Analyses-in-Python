@@ -6,7 +6,7 @@
 
 ----
 
-The only dependency this analysis requires is an installation of MS Excel.
+These analyses require the installation of Visual Studio Code.
 
 ----
 
@@ -14,7 +14,11 @@ The only dependency this analysis requires is an installation of MS Excel.
 
 ----
 
-The VBA code for this stock analysis is in the file, StockAnalysisMacro.bas, which has been loaded and run in the following macro-enabled Excel files: MultipleYearStockDataComplete2018.xlsm, MultipleYearStockDataComplete2019.xlsm, and MultipleYearStockDataComplete2020.xlsm; the testing file, AlphabeticalTestingComplete.xlsm, also contains the module.  The Images folder includes images of summary and analysis results; and the Resources folder contains unprocessed starter files.
+The files are folders for the two analyses are in the folders, PyBank and PyPoll, respectively.  
+
+For the bank analysis, the Python source code is in the file, PyBankMain.py; the input for the Python script is the CSV file, budgetData.csv, in the Resources folder; and the output is the text file, budgetDataAnalysis.txt, in the Analysis folder.
+
+For the election analysis, the Python source code is in the file, PyPollMain.py; the input for the Python script is the CSV file, electionData.csv, in the Resources folder; and the output is the text file, electionDataAnalysis.txt, in the Analysis folder.
 
 ----
 
@@ -24,15 +28,15 @@ The VBA code for this stock analysis is in the file, StockAnalysisMacro.bas, whi
 
 #### **Source code**
 
-StockAnalysisMacro.bas
+PyBankMain.py, PyPollMain.py
 
 #### **Input files**
 
-CrowdfundingBook (Unprocessed).xlsx
+budgetData.csv, electionData.csv
 
 #### **Output files**
 
-MultipleYearStockDataComplete2018.xlsm, MultipleYearStockDataComplete2019.xlsm, MultipleYearStockDataComplete2020.xlsm
+budgetDataAnalysis.txt, electionDataAnalysis.txt
 
 #### **SQL script**
 
@@ -40,9 +44,9 @@ n/a
 
 #### **Software**
 
-MS Excel, MS Visual Studio Code, VBA
+MS Visual Studio Code, VBA
 
-![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ----
 
