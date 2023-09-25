@@ -56,41 +56,21 @@ MS Visual Studio Code, VBA
 
 #### main branch 
 
-|&rarr; [./MultipleYearStockDataComplete2018.xlsm](./MultipleYearStockDataComplete2018.xlsm)
+|&rarr; [./PyBank/](./PyBank/)
 
-|&rarr; [./MultipleYearStockDataComplete2019.xlsm](./MultipleYearStockDataComplete2019.xlsm)
+  &emsp; |&rarr; [./PyBank/PyBankMain.py](./PyBank/PyBankMain.py)
 
-|&rarr; [./MultipleYearStockDataComplete2020.xlsm](./MultipleYearStockDataComplete2020.xlsm)
+  &emsp; |&rarr; [./PyBank/README.md](./PyBank/README.md)
+
+|&rarr; [./PyPoll/](./PyPoll/)
+
+  &emsp; |&rarr; [./PyPoll/PyBankMain.py](./PyPoll/PyBankMain.py)
+
+  &emsp; |&rarr; [./PyPoll/README.md](./PyPoll/README.md)
 
 |&rarr; [./README.TECHNICAL.md](./README.TECHNICAL.md)
 
 |&rarr; [./README.md](./README.md)
-
-|&rarr; [./StockAnalysisMacro.bas](./StockAnalysisMacro.bas)
-
-|&rarr; [./Images/](./Images/)
-
-  &emsp; |&rarr; [./Images/README.md](./Images/README.md)
-
-  &emsp; |&rarr; [./Images/StockAnalysis_in_VBA_2018.png](./Images/StockAnalysis_in_VBA_2018.png)
-  
-  &emsp; |&rarr; [./Images/StockAnalysis_in_VBA_2019.png](./Images/StockAnalysis_in_VBA_2019.png)
-  
-  &emsp; |&rarr; [./Images/StockAnalysis_in_VBA_2020.png](./Images/StockAnalysis_in_VBA_2020.png)
-  
-  &emsp; |&rarr; [./Images/StockSummary_in_VBA_2018.png](./Images/StockSummary_in_VBA_2018.png)
-  
-  &emsp; |&rarr; [./Images/StockSummary_in_VBA_2019.png](./Images/StockSummary_in_VBA_2019.png)
-  
-  &emsp; |&rarr; [./Images/StockSummary_in_VBA_2020.png](./Images/StockSummary_in_VBA_2020.png)
-  
-|&rarr; [./Resources/](./Resources/)
-
-  &emsp; |&rarr; [./Resources/AlphabeticalTestingUnprocessed.xlsx](./Resources/AlphabeticalTestingUnprocessed.xlsx)
-
-  &emsp; |&rarr; [./Resources/MultipleYearStockDataUnprocessed.xlsx](./Resources/MultipleYearStockDataUnprocessed.xlsx)  
-
-  &emsp; |&rarr; [./Resources/README.md](./Resources/README.md)
 
 ----
 
