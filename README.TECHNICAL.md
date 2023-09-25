@@ -14,7 +14,7 @@ These analyses require the installation of Visual Studio Code.
 
 ----
 
-The files are folders for the two analyses are in the folders, PyBank and PyPoll, respectively.  
+The files and folders for the two analyses are in the folders, PyBank and PyPoll, respectively.  
 
 For the bank analysis, the Python source code is in the file, PyBankMain.py; the input for the Python script is the CSV file, budgetData.csv, in the Resources folder; and the output is the text file, budgetDataAnalysis.txt, in the Analysis folder.
 
