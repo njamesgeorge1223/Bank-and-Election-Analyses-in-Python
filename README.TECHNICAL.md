@@ -61,12 +61,12 @@ MS Visual Studio Code, VBA
   &emsp; |&rarr; [./PyBank/PyBankMain.py](./PyBank/PyBankMain.py)
 
   &emsp; |&rarr; [./PyBank/README.md](./PyBank/README.md)
-
-  &emsp; |&rarr; [./PyBank/Analysis/](./PyBank/Analysis/)
+  
+|&rarr; [./PyBank/Analysis/](./PyBank/Analysis/)
 
   &emsp; |&rarr; [./PyBank/Analysis/budgetDataAnalysis.txt](./PyBank/Analysis/budgetDataAnalysis.txt)
 
-  &emsp; |&rarr; [./PyBank/Resources/](./PyBank/Resources/)
+|&rarr; [./PyBank/Resources/](./PyBank/Resources/)
 
   &emsp; |&rarr; [./PyBank/Resources/budgetData.csv](./PyBank/Resources/budgetData.csv)
 
