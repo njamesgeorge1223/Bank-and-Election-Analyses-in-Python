@@ -62,6 +62,14 @@ MS Visual Studio Code, VBA
 
   &emsp; |&rarr; [./PyBank/README.md](./PyBank/README.md)
 
+  &emsp; |&rarr; [./PyBank/Analysis/](./PyBank/Analysis/)
+
+  &emsp; |&rarr; [./PyBank/Analysis/budgetDataAnalysis.txt](./PyBank/Analysis/budgetDataAnalysis.txt)
+
+  &emsp; |&rarr; [./PyBank/Resources/](./PyBank/Resources/)
+
+  &emsp; |&rarr; [./PyBank/Resources/budgetData.csv](./PyBank/Resources/budgetData.csv)
+
 |&rarr; [./PyPoll/](./PyPoll/)
 
   &emsp; |&rarr; [./PyPoll/PyBankMain.py](./PyPoll/PyBankMain.py)
