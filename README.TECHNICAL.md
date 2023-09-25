@@ -76,6 +76,14 @@ MS Visual Studio Code, VBA
 
   &emsp; |&rarr; [./PyPoll/README.md](./PyPoll/README.md)
 
+|&rarr; [./PyPoll/Analysis/](./PyPoll/Analysis/)
+
+  &emsp; |&rarr; [./PyPoll/Analysis/electionDataAnalysis.txt](./PyPoll/Analysis/electionDataAnalysis.txt)
+
+|&rarr; [./PyPoll/Resources/](./PyPoll/Resources/)
+
+  &emsp; |&rarr; [./PyPoll/Resources/electionData.csv](./PyPoll/Resources/electionData.csv)
+
 |&rarr; [./README.TECHNICAL.md](./README.TECHNICAL.md)
 
 |&rarr; [./README.md](./README.md)
