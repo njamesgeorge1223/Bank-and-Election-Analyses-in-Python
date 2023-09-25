@@ -94,9 +94,7 @@ MS Visual Studio Code, VBA
 
 ----
 
-[MS Excel Help and Learning](https://support.microsoft.com/en-us/excel)
-
-[MS Office VBA Reference](https://learn.microsoft.com/en-us/office/vba/api/overview/)
+[Python 3.11.5 Documentation](https://docs.python.org/3/)
 
 ----
 
