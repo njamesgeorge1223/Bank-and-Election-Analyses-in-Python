@@ -1,4 +1,4 @@
-# Python Challenges
+# Bank and Election Analyses
 
 ----
 
