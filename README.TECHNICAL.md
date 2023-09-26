@@ -96,6 +96,8 @@ MS Visual Studio Code, Python 3.11.4
 
 [Python 3.11.5 Documentation](https://docs.python.org/3/)
 
+[Visual Studio Code](https://code.visualstudio.com/docs)
+
 ----
 
 ### **Authors and Acknowledgment:**
