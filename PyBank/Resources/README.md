@@ -1,4 +1,4 @@
-This folder contains the input file, electionData.csv, for the Python file, PyBankMain.py.
+This folder contains the input file, budgetData.csv, for the Python file, PyBankMain.py.
 
 ----
 
