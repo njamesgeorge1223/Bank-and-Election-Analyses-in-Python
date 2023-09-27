@@ -6,7 +6,7 @@
 
 ----
 
-These analyses require the installation of Visual Studio Code.
+These analyses require the installation of Visual Studio Code.i
 
 ----
 
