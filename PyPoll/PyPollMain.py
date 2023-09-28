@@ -13,6 +13,14 @@
  #      the analysis to the terminal and exports the results to a text file, 
  #      election_data_analysis.txt, in the Analysis folder.
  #
+ #      Here is a List of subroutines and functions:
+ #
+ #      CalculateCandidatePercentagesSubRoutine
+ #      DetermineWinnerSubRoutine
+ #      ReadFileAndCalculateValuesSubRoutine
+ #      WriteDataToTerminalSubRoutine
+ #      WriteDataToFileSubRoutine
+ #
  #
  #  Date            Description                             Programmer
  #  ----------      ------------------------------------    ------------------
@@ -75,7 +83,7 @@ CONSTANT_CANDIDATE_TIE_MESSAGE \
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  calculateCandidatePercentagesSubRoutine()
+ #  Subroutine Name:  CalculateCandidatePercentagesSubRoutine()
  #
  #  Subroutine Description:
  #      This subroutine calculates each candidate's percentage of the total vote based 
@@ -95,7 +103,7 @@ CONSTANT_CANDIDATE_TIE_MESSAGE \
  #
  #******************************************************************************************/
 
-def calculateCandidatePercentagesSubRoutine():
+def CalculateCandidatePercentagesSubRoutine():
 
     tempPercentFloatVariable = 0.0
 
@@ -147,7 +155,7 @@ def calculateCandidatePercentagesSubRoutine():
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  determineWinnerSubRoutine()
+ #  Subroutine Name:  DetermineWinnerSubRoutine()
  #
  #  Subroutine Description:
  #      This subroutine compares each candidate's vote count to find the winner of the
@@ -166,7 +174,7 @@ def calculateCandidatePercentagesSubRoutine():
  #
  #******************************************************************************************/
 
-def determineWinnerSubRoutine():
+def DetermineWinnerSubRoutine():
 
     # This variable tells the program whether a tie has occurred between two or more winning 
     # candidates.
@@ -313,7 +321,7 @@ def determineWinnerSubRoutine():
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  readFileAndCalculateValuesSubRoutine
+ #  Subroutine Name:  ReadFileAndCalculateValuesSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine reads the input csv file and calculates the summary values needed 
@@ -332,7 +340,7 @@ def determineWinnerSubRoutine():
  #
  #******************************************************************************************/
 
-def readFileAndCalculateValuesSubRoutine():
+def ReadFileAndCalculateValuesSubRoutine():
 
     # This variable is the candidate's name from the current row of data.
     currentCandidateNameStringVariable \
@@ -490,14 +498,14 @@ def readFileAndCalculateValuesSubRoutine():
         = rowDataIndex
 
 
-    calculateCandidatePercentagesSubRoutine()
+    CalculateCandidatePercentagesSubRoutine()
 
-    determineWinnerSubRoutine()
+    DetermineWinnerSubRoutine()
 
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  writeDataToTerminalSubRoutine
+ #  Subroutine Name:  WriteDataToTerminalSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine writes the data in the summary dictionary to the terminal.
@@ -515,7 +523,7 @@ def readFileAndCalculateValuesSubRoutine():
  #
  #******************************************************************************************/
 
-def writeDataToTerminalSubRoutine():
+def WriteDataToTerminalSubRoutine():
 
     print()
 
@@ -562,7 +570,7 @@ def writeDataToTerminalSubRoutine():
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  writeDataToFileSubRoutine
+ #  Subroutine Name:  WriteDataToFileSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine writes the data in the summary dictionary to the output file.
@@ -580,7 +588,7 @@ def writeDataToTerminalSubRoutine():
  #
  #******************************************************************************************/
 
-def writeDataToFileSubRoutine():
+def WriteDataToFileSubRoutine():
 
     with open(CONSTANT_OUTPUT_FILE_NAME, 'w') as txtFile:
     
@@ -656,8 +664,8 @@ summaryDictionary \
         'Winner' : ''}
 
 
-readFileAndCalculateValuesSubRoutine()
+ReadFileAndCalculateValuesSubRoutine()
 
-writeDataToTerminalSubRoutine()
+WriteDataToTerminalSubRoutine()
 
-writeDataToFileSubRoutine()
+WriteDataToFileSubRoutine()
