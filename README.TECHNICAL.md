@@ -78,7 +78,7 @@ Python 3.11.4, Visual Studio Code
 
   &emsp; |&rarr; [./PyPoll/README.md](./PyPoll/README.md)
 
-  &emsp; |&rarr; [./PyBank/Table-Of-Contents-PyPoll.md](./PyBank/Table-Of-Contents-PyPoll.md)
+  &emsp; |&rarr; [./PyPoll/Table-Of-Contents-PyPoll.md](./PyBank/Table-Of-Contents-PyPoll.md)
 
 |&rarr; [./PyPoll/Analysis/](./PyPoll/Analysis/)
 
