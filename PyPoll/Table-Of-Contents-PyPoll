@@ -1,0 +1,17 @@
+# **Crowdfunding Goal Analysis In Excel**
+
+----
+
+## **Table of Contents (PyBankMain.py)**
+
+----
+
+**CalculateCandidatePercentagesSubRoutine**
+
+**DetermineWinnerSubRoutine**
+
+**ReadFileAndCalculateValuesSubRoutine**
+
+**WriteDataToTerminalSubRoutine**
+
+**WriteDataToFileSubRoutine**
