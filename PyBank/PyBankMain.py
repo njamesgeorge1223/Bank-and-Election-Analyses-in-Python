@@ -11,7 +11,13 @@
  #      the changes in 'Profit/Losses', the greatest increase in profits (date and 
  #      amount), and the greatest decrease in profits (date and amount).  In 
  #      addition, the program both prints the results to the terminal and exports it 
- #      to a text file in the Analysis folder, budget_data_analysis.txt.
+ #      to a text file in the Analysis folder, budget_data_analysis.txt. 
+ #   
+ #      Here is a list of the functions and subroutines:
+ #
+ #      ReadFileAndCalculateValuesSubRoutine
+ #      WriteDataToTerminalSubRoutine
+ #      WriteDataToFileSubRoutine
  #
  #
  #  Date            Description                             Programmer
@@ -71,7 +77,7 @@ CONSTANT_OUTPUT_DATA_TITLE_LINE \
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  readFileAndCalculateValuesSubRoutine
+ #  Subroutine Name:  ReadFileAndCalculateValuesSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine reads an input csv file and calculates the summary values
@@ -90,7 +96,7 @@ CONSTANT_OUTPUT_DATA_TITLE_LINE \
  #
  #******************************************************************************************/
 
-def readFileAndCalculateValuesSubRoutine():
+def ReadFileAndCalculateValuesSubRoutine():
 
     # These variables contain the current and last profit/loss values 
     # as the program moves down the rows of input data.
@@ -301,7 +307,7 @@ def readFileAndCalculateValuesSubRoutine():
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  writeDataToTerminalSubRoutine
+ #  Subroutine Name:  WriteDataToTerminalSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine writes the data in the summary dictionary to the terminal.
@@ -319,7 +325,7 @@ def readFileAndCalculateValuesSubRoutine():
  #
  #******************************************************************************************/
 
-def writeDataToTerminalSubRoutine():
+def WriteDataToTerminalSubRoutine():
 
     print()
 
@@ -361,7 +367,7 @@ def writeDataToTerminalSubRoutine():
 
 #*******************************************************************************************
  #
- #  Subroutine Name:  writeDataToFileSubRoutine
+ #  Subroutine Name:  WriteDataToFileSubRoutine
  #
  #  Subroutine Description:
  #      This subroutine writes the data in the summary dictionary to the output file.
@@ -379,7 +385,7 @@ def writeDataToTerminalSubRoutine():
  #
  #******************************************************************************************/
 
-def writeDataToFileSubRoutine():
+def WriteDataToFileSubRoutine():
 
     with open(CONSTANT_OUTPUT_FILE_NAME, 'w') as txtFile:
     
@@ -457,10 +463,10 @@ summaryDictionary \
                  'Value': 0 }}
 
 
-readFileAndCalculateValuesSubRoutine()
+ReadFileAndCalculateValuesSubRoutine()
 
 
-writeDataToTerminalSubRoutine()
+WriteDataToTerminalSubRoutine()
 
 
-writeDataToFileSubRoutine()
+WriteDataToFileSubRoutine()
