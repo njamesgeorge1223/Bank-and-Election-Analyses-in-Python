@@ -2,9 +2,13 @@
 
 ----
 
-## **Table of Contents (PyBankMain.py)**
+## **Table of Contents (PyPollMain.py)**
 
 ----
+
+**CalculateCandidatePercentagesSubRoutine**
+
+**DetermineWinnerSubRoutine**
 
 **ReadFileAndCalculateValuesSubRoutine**
 
